@@ -1,0 +1,159 @@
+* {
+  font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth;
+  overflow: hidden;
+  outline: none;
+}
+
+body {
+  margin: 0px !important;
+  overflow: hidden;
+}
+
+#background {
+  background: rgb(95, 0, 0);
+  background: linear-gradient(240deg, rgba(95, 0, 0, 1) 0%, rgba(58, 11, 11, 1) 100%);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+#titlebar {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 80px;
+  width: 100vw;
+  font-size: 72px;
+  z-index: 2;
+  animation: 2s ease-out 0s 1 slideInFromTop;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  50% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.indicator {
+  color: rgb(200, 200, 200);
+  font-size: 3em;
+  transition-duration: 0.4s;
+  z-index: 1;
+}
+
+.indicator:hover {
+  color: white;
+  font-size: 3.4em;
+  cursor: pointer;
+}
+
+#topIndicator {
+  position: fixed;
+  left: 50%;
+  top: 10px;
+  transform: translate(-50%, 0px);
+  user-select: none;
+}
+
+#bottomIndicator {
+  position: fixed;
+  left: 50%;
+  bottom: 10px;
+  transform: translate(-50%, 0px);
+  user-select: none;
+}
+
+.page {
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+}
+
+#page1 {}
+
+#page2 {}
+
+#page3 {}
+
+.previewImage {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  user-select: none;
+}
+
+.previewImage>img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70vw;
+  height: auto;
+  transform: translate(-50%, -50%);
+  margin: 0px;
+  filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.4));
+  transition-duration: 0.4s;
+}
+
+.tippy-popper {
+  height: 60px;
+}
+
+.previewImage>img:hover {
+  width: 80vw;
+}
+
+.previewImage>div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(200, 200, 200);
+  font-size: 3em;
+  text-decoration: underline;
+  user-select: none;
+  cursor: pointer;
+  text-decoration-color: rgb(91, 0, 0);
+  filter: drop-shadow(0 0 0.75rem crimson);
+  transition-duration: 0.4s;
+}
+
+.previewImage>div:hover {
+  color: white;
+  font-size: 3.4em;
+}
+
+#windows {
+  margin-right: 5px;
+}
+
+#linux {
+  margin-left: 5px;
+}
+
+input[type="button"] {
+  font-size: 2em;
+  color: rgb(200, 200, 200);
+  border: none;
+  border-radius: 3px;
+  background-color: rgb(25, 25, 25);
+  transition-duration: 0.4s;
+}
+
+input[type="button"]:hover {
+  background-color: rgb(100, 25, 25);
+  color: white;
+  cursor: pointer;
+}

@@ -1,5 +1,5 @@
 $("html, body").animate({
-  scrollTop: $("#page1").offset().top
+  scrollTop: $("html").offset().top
 }, 100);
 
 function getOS() {
@@ -196,16 +196,13 @@ var features = [
   "Ctrl+Shift+Y to show and hide the app."
 ];
 
-var featuresLeft = features;
+var featuresLeft = features.slice();
 
 var lastPick = -1;
 
 function changeText() {
-  if (featuresLeft.length == 0) featuresLeft = features;
+  if (featuresLeft.length == 0) featuresLeft = features.slice();
   var newPick = rand(0, featuresLeft.length - 1);
-  while (newPick == lastPick) {
-    newPick = rand(0, featuresLeft.length - 1);
-  }
   lastPick = newPick;
   $("#featuresText").css("opacity", "0");
   setTimeout(() => {

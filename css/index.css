@@ -89,6 +89,7 @@ body {
 #page3 {}
 
 .previewImage {
+  transform-style: preserve-3d !important;
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -107,12 +108,19 @@ body {
   transition-duration: 0.4s;
 }
 
+.highlightOS {
+  border-color: rgb(100, 25, 25) !important;
+  border-width: 2px !important;
+  border-style: solid !important;
+}
+
 .tippy-popper {
   height: 60px;
 }
 
 .previewImage>img:hover {
   width: 80vw;
+  filter: drop-shadow(0 0 1.75rem rgba(0, 0, 0, 0.4));
 }
 
 .previewImage>div {
@@ -156,4 +164,39 @@ input[type="button"]:hover {
   background-color: rgb(100, 25, 25);
   color: white;
   cursor: pointer;
+}
+
+#blank {
+  height: 50vh;
+  background-color: rgb(100, 25, 25);
+}
+
+#blank:hover {
+  height: 60vh;
+}
+
+#info {
+  width: 70vw;
+  height: 50vh;
+  line-height: 50vh;
+  font-size: 16px;
+  text-decoration: none;
+  filter: none;
+  text-align: center;
+}
+
+#info:hover {
+  font-size: 16px;
+  color: rgb(200, 200, 200);
+  cursor: auto;
+}
+
+#features {
+}
+
+#featuresText {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0px;
+  line-height: normal;
 }

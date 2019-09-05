@@ -134,8 +134,12 @@ body {
   user-select: none;
   cursor: pointer;
   text-decoration-color: rgb(91, 0, 0);
-  filter: drop-shadow(0 0 0.75rem crimson);
+  filter: drop-shadow(0 0 0.75rem black);
   transition-duration: 0.4s;
+}
+
+.firstPreviewImage>div {
+  filter: drop-shadow(0 0 0.75rem crimson) !important;
 }
 
 .previewImage>div:hover {
@@ -166,32 +170,17 @@ input[type="button"]:hover {
   cursor: pointer;
 }
 
-#blank {
-  height: 50vh;
-  background-color: rgb(100, 25, 25);
-}
-
-#blank:hover {
-  height: 60vh;
-}
 
 #info {
   width: 70vw;
   height: 50vh;
   line-height: 50vh;
-  font-size: 16px;
+  font-size: 20px;
   text-decoration: none;
-  filter: none;
   text-align: center;
-}
-
-#info:hover {
-  font-size: 16px;
-  color: rgb(200, 200, 200);
-  cursor: auto;
-}
-
-#features {
+  filter: drop-shadow(0 0 0.75rem black);
+  color: white;
+  pointer-events: none;
 }
 
 #featuresText {
@@ -199,4 +188,5 @@ input[type="button"]:hover {
   padding-right: 10px;
   margin: 0px;
   line-height: normal;
+  pointer-events: none;
 }

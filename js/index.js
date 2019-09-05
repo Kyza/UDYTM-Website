@@ -128,7 +128,7 @@ tippy("#listen", {
 });
 
 tippy("#discord", {
-  content: `<input type="button" id="joinDiscord" value="Join Server" />`,
+  content: `<input type="button" id="joinDiscord" value="Join Our Server" />`,
   interactive: true,
   placement: "bottom",
   theme: "translucent"
@@ -196,18 +196,22 @@ var features = [
   "Ctrl+Shift+Y to show and hide the app."
 ];
 
+var featuresLeft = features;
+
 var lastPick = -1;
 
 function changeText() {
-  var newPick = rand(0, features.length - 1);
+  if (featuresLeft.length == 0) featuresLeft = features;
+  var newPick = rand(0, featuresLeft.length - 1);
   while (newPick == lastPick) {
-    newPick = rand(0, features.length - 1);
+    newPick = rand(0, featuresLeft.length - 1);
   }
   lastPick = newPick;
   $("#featuresText").css("opacity", "0");
   setTimeout(() => {
-    $("#featuresText").html(features[newPick]);
+    $("#featuresText").html(featuresLeft[newPick]);
     $("#featuresText").css("opacity", "1");
+    featuresLeft = featuresLeft.splice(newPick, 1);
   }, 4e2);
 }
 changeText();

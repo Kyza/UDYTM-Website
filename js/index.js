@@ -196,19 +196,18 @@ var features = [
   "Ctrl+Shift+Y to show and hide the app."
 ];
 
-var featuresLeft = features.slice();
-
-var lastPick = -1;
+var featuresLeft = features;
 
 function changeText() {
-  if (featuresLeft.length == 0) featuresLeft = features.slice();
-  var newPick = rand(0, featuresLeft.length - 1);
-  lastPick = newPick;
+  if (featuresLeft.length == 0) featuresLeft = features;
+
+  var pick = rand(0, featuresLeft.length - 1);
+
   $("#featuresText").css("opacity", "0");
   setTimeout(() => {
-    $("#featuresText").html(featuresLeft[newPick]);
+    $("#featuresText").html(featuresLeft[pick]);
     $("#featuresText").css("opacity", "1");
-    featuresLeft = featuresLeft.splice(newPick, 1);
+    featuresLeft.splice(pick, 1);
   }, 4e2);
 }
 changeText();

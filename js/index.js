@@ -196,10 +196,10 @@ var features = [
   "Ctrl+Shift+Y to show and hide the app."
 ];
 
-var featuresLeft = features;
+var featuresLeft = features.slice();
 
 function changeText() {
-  if (featuresLeft.length == 0) featuresLeft = features;
+  if (featuresLeft.length == 0) featuresLeft = features.slice();
 
   var pick = rand(0, featuresLeft.length - 1);
 
